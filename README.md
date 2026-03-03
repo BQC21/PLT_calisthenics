@@ -41,4 +41,9 @@ When you have finished, click on `Submit`. Check on Home page to see updates.
 
 ### Learnings:
 * Create a navbar using routing techniques with `react-router-dom`
-* 
+* Adding a image background with CSS
+
+### Pendings:
+* Update selector according to exercises list
+* Add description for each exercise
+* Considerate time exercise for holds (plank, dead hangs, handstand, ...)
