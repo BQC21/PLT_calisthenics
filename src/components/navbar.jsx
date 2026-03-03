@@ -9,6 +9,9 @@ function Navbar() {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/">HOME</NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/description">+ Info</NavLink>
+                    </li>
                     {/* <li className="nav-item">
                         <NavLink className="nav-link" to="/new-session">ADD SESSION</NavLink>
                     </li> */}

@@ -5,6 +5,13 @@ import Navbar from './components/navbar';
 // Pages
 import Home from "./pages/home";
 import Session from "./pages/new_session";
+import Description from "./pages/info";
+
+// Groups exercises
+import Pull from "./pages/groups/pull";
+import Push from "./pages/groups/push";
+import Core from "./pages/groups/core";
+import Legs from "./pages/groups/legs";
 
 // Auth
 // import Login from "./auth/login";
@@ -16,14 +23,19 @@ function App() {
   return (
     <>
       <Navbar />
-        <div className="container mt-4"> 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/new-session" element={<Session />} />
-            {/* <Route path="/login" element={<Login />} />
-            <Route path="/suscription" element={<Suscription />} /> */}
-          </Routes>
-        </div>
+      <div className="container mt-4"> 
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new-session" element={<Session />} />
+          <Route path="/description" element={<Description />} />
+          <Route path="/pull" element={<Pull />} />
+          <Route path="/push" element={<Push />} />
+          <Route path="/core" element={<Core />} />
+          <Route path="/legs" element={<Legs />} />
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/suscription" element={<Suscription />} /> */}
+        </Routes>
+      </div>
     </>
   )
 }

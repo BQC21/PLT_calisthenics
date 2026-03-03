@@ -15,8 +15,7 @@ function Home() {
 
     return (
         <div className="text-center">
-            <h1>Welcome to PLT</h1>
-            <p>Your personalized training platform</p>
+            <h1>Welcome to your personalized training platform</h1>
 
             <div className="card mt-4">
                 <div className="card-body">
