@@ -81,6 +81,20 @@ function Description() {
                     </section>
                 </div>
             </div>
+            {/* <div className="card-body">
+                    <h2>Check these references for more info</h2>
+                    <span> <a href=>
+                    <span className="mx-5"></span>
+                    <span> <Link to="/push">
+                            <button className="btn btn-primary mt-3">Push execises</button> </Link> </span>
+                    <span className="mx-5"></span>
+                    <span> <Link to="/core">
+                            <button className="btn btn-primary mt-3">Core execises</button> </Link> </span>
+                    <span className="mx-5"></span>
+                    <span> <Link to="/legs">
+                            <button className="btn btn-primary mt-3">Legs execises</button> </Link> </span>
+                </div>
+            </div>   */}
         </div>
     </>      			
 	);

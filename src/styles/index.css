@@ -29,7 +29,7 @@ body {
 }
 
 /* responsive */
-@media (max-width: 768px) {
+@media (max-width: 1800px) {
   .text-center h1 {
     font-size: 30px;
   }
@@ -73,6 +73,13 @@ body {
   border-radius: 14px;
 }
 
+.card-img {
+  border-radius: 8px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+
 .quote-card {
   min-height: 220px;
 }
@@ -90,6 +97,8 @@ body {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .card {
