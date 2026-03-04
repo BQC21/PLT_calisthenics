@@ -1,19 +1,32 @@
 function pull() {
     return(
-        <div className="card mt-4">
-                <div className="card-body">
-                    <p className="card-text">
-                        Pull exercises </p>
-                    <ul className = "tips-list">
-                        <li>Inverted Rows</li>
-                        <li>Chin ups</li>
-                        <li>Pull ups</li>
-                        <li>High Pull ups</li>
-                        <li>Muscle ups</li>
-                        <li>Front lever pull ups</li>
-                    </ul>
+        <>
+            <h1 className="text-center">Pull exercises</h1>
+            <div className="card mt-4">
+                <h3 className="card-text"> Inverted Rows </h3>
+                <img src="../src/assets/exercises/pull/inverted_row.png" alt="inverted rows" className="card-img" height = "20%" width = "5%"/>
             </div>
-        </div>
+            <div className="card mt-4">
+                <h3 className="card-text"> Chin ups </h3>
+                <img src="../src/assets/exercises/pull/chin_ups.jpg" alt="chin ups" className="card-img" height = "20%" width = "5%"/>
+            </div>
+            <div className="card mt-4">
+                <h3 className="card-text"> Pull ups </h3>
+                <img src="../src/assets/exercises/pull/pull_ups.jpg" alt="pull ups" className="card-img" height = "20%" width = "5%"/>
+            </div>
+            <div className="card mt-4">
+                <h3 className="card-text"> High Pull ups </h3>
+                <img src="../src/assets/exercises/pull/high_pull_ups.png" alt="high pull ups" className="card-img" height = "20%" width = "5%"/>
+            </div>
+            <div className="card mt-4">
+                <h3 className="card-text"> Muscle ups </h3>
+                <img src="../src/assets/exercises/pull/muscle_ups.png" alt="muscle ups" className="card-img" height = "20%" width = "5%"/>
+            </div>
+            <div className="card mt-4">
+                <h3 className="card-text"> Front lever pull ups </h3>
+                <img src="../src/assets/exercises/pull/front_lever_pull_ups.png" alt="front lever pull ups" className="card-img" height = "20%" width = "5%"/>
+            </div>
+        </>
     );
 }
 

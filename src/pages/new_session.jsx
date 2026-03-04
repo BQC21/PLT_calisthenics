@@ -10,11 +10,16 @@ function New_Session() {
     const exercises = [
         "Pull ups",
         "Inverted rows",
+        "Chin ups",
+        "High Pull ups",
+        "Muscle ups",
+        "Front lever pull ups",
         "Dips",
         "Push ups",
         "Pike Push ups",
-        "Handstand Push ups",
         "Archer Push ups",
+        "Handstand Push ups",
+        "Planceh Push ups",
         "Dragonflag",
         "Ab wheel",
         "Leg raises",
@@ -29,8 +34,8 @@ function New_Session() {
 
     const handleFocus = (exercise) => {
         const focusMap = {
-            pull: ["Pull ups", "Inverted rows"],
-            push: ["Dips", "Push ups", "Pike Push ups", "Handstand Push ups", "Archer Push ups"],
+            pull: ["Pull ups", "Inverted rows", "Chin ups", "High Pull ups", "Muscle ups", "Front lever pull ups"],
+            push: ["Dips", "Push ups", "Pike Push ups", "Archer Push ups", "Handstand Push ups", "Planceh Push ups"],
             core: ["Ab wheel", "Leg raises", "Crunches", "Toes to bar", "Dragonflag"],
             legs: ["Squats", "Lunges", "Bulgarian Squats", "Pistol Squats", "Dragon Squats"]
         };
