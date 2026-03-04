@@ -6,6 +6,8 @@ import Navbar from './components/navbar';
 import Home from "./pages/home";
 import Session from "./pages/new_session";
 import Description from "./pages/info";
+import { Account } from './pages/account';
+import { Auth } from './pages/auth';
 
 // Groups exercises
 import Pull from "./pages/groups/pull";
@@ -32,8 +34,8 @@ function App() {
           <Route path="/push" element={<Push />} />
           <Route path="/core" element={<Core />} />
           <Route path="/legs" element={<Legs />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/suscription" element={<Suscription />} /> */}
+          <Route path="/auth/:pathname" element={<Auth />} />
+          <Route path="/account/:pathname" element={<Account />} />
         </Routes>
       </div>
     </>
