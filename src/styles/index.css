@@ -116,6 +116,10 @@ body {
   margin: 0 0 8px;
   letter-spacing: 0.2px;
   text-align: center;
+  font-size: 50px;
+  color: #ffffff;
+  border-color: #0a0000;
+  font-weight: 600;
 }
 
 h2 {
