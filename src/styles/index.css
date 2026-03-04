@@ -132,9 +132,10 @@ h2 {
 
 .tips-list {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 0px;
   color: var(--muted);
   text-align: left;
+  margin-left: 10px;
 }
 
 /* Navbar personalizada */
