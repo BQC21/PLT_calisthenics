@@ -81,20 +81,16 @@ function Description() {
                     </section>
                 </div>
             </div>
-            {/* <div className="card-body">
+            <div className="card mt-4">
                     <h2>Check these references for more info</h2>
-                    <span> <a href=>
+                    <span> <a href="https://www.youtube.com/@yellowdude_co" target="_blank" rel="noopener noreferrer">Yellow Dude | Gravgear</a></span>
                     <span className="mx-5"></span>
-                    <span> <Link to="/push">
-                            <button className="btn btn-primary mt-3">Push execises</button> </Link> </span>
+                    <span> <a href="https://www.youtube.com/@algecalistenia" target="_blank" rel="noopener noreferrer">Algecalistenia</a></span>
                     <span className="mx-5"></span>
-                    <span> <Link to="/core">
-                            <button className="btn btn-primary mt-3">Core execises</button> </Link> </span>
+                    <span> <a href="https://www.youtube.com/@Summerfunfitness" target="_blank" rel="noopener noreferrer">Summenfunfitness</a></span>
                     <span className="mx-5"></span>
-                    <span> <Link to="/legs">
-                            <button className="btn btn-primary mt-3">Legs execises</button> </Link> </span>
-                </div>
-            </div>   */}
+                    <span> <a href="https://www.youtube.com/@fitnessFAQs" target="_blank" rel="noopener noreferrer">Fitness FAQs</a></span>
+            </div>  
         </div>
     </>      			
 	);

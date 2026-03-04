@@ -94,11 +94,12 @@ body {
 
 /* Contenido principal */
 .container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 40px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  margin-left: 50px;
-  margin-right: 50px;
 }
 
 .card {
