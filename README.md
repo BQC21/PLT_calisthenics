@@ -47,3 +47,4 @@ When you have finished, click on `Submit`. Check on Home page to see updates.
 ### Pendings:
 * Add authentication (Login, Register)
 * Add localStorage to save past routines
+* Show load accumulated on home per session page with a linear chart

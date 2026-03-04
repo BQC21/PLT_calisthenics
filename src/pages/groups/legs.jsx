@@ -2,7 +2,7 @@ function legs() {
     return(
         <div className="card mt-4">
             <div className="card-body">
-                <h1> Pull exercises </h1>
+                <h1> Legs exercises </h1>
                 <table className="table_exercises">
                     <thead>
                         <tr>
