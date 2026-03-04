@@ -28,6 +28,7 @@ function Home() {
                                     <th>Reps</th>
                                     <th>Focus</th>
                                     <th>Extra weight (kg)</th>
+                                    <th>Set volume (kg)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,6 +38,7 @@ function Home() {
                                         <td>{routineItem.reps}</td>
                                         <td>{routineItem.focus}</td>
                                         <td>{routineItem.extra_weight}</td>
+                                        <td>{routineItem.set_volume}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -44,6 +46,7 @@ function Home() {
                     ) : (
                         <p>No routines added yet.</p>
                     )}
+                    <p className="card-text">Total volume(kg): {routineList.reduce((sum, item) => sum + item.set_volume, 0)}</p>
                 </div>
             </div>
 

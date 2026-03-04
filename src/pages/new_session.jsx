@@ -2,6 +2,22 @@ import { useEffect, useState } from "react";
 
 const ROUTINE_STORAGE_KEY = "plat_routine_list";
 
+export const bodyweight = 70; // Example bodyweight in kg, you can make this dynamic based on user input or profile data
+export function SetVolume(bodyweight, extraWeight, reps, focus) {
+    switch (focus) {
+        case "pull":
+        return reps * (bodyweight + extraWeight) * 1.0;
+        case "push":
+        return reps * (bodyweight + extraWeight) * 0.8;
+        case "core":
+        return reps * (bodyweight + extraWeight) * 0.6;
+        case "legs":
+        return reps * (extraWeight) * 1.2;
+        default:
+        return reps * (bodyweight + extraWeight) * 1.0;
+    }
+};
+
 function New_Session() {
     const [selectExercise, setSelectedExercise] = useState("");
     const [reps, setReps] = useState(10);
@@ -19,11 +35,9 @@ function New_Session() {
         "Pike Push ups",
         "Archer Push ups",
         "Handstand Push ups",
-        "Planceh Push ups",
+        "Planche Push ups",
         "Dragonflag",
         "Ab wheel",
-        "Leg raises",
-        "Crunches",
         "Toes to bar",
         "Squats",
         "Lunges",
@@ -81,6 +95,7 @@ function New_Session() {
             reps,
             extra_weight: extraWeight,
             focus: handleFocus(selectExercise),
+            set_volume: SetVolume(bodyweight, extraWeight, reps, handleFocus(selectExercise))
         };
         setRoutineList([...routineList, routine]);
     };
@@ -115,6 +130,7 @@ function New_Session() {
                             id="extra_weight" placeholder="Add if you using extra weights (bags, dumbells, ...) in kg, else leave it as 0"
                             value={extraWeight} onChange={handleExtraWeightChange} />
                         </div>
+
                     </form>
                     <button className="btn btn-primary mt-3" onClick={uploadExercise}>Add exercise</button>
                     <span className="mx-5"></span>
@@ -136,12 +152,13 @@ function New_Session() {
                                 <th className="text-center">Reps</th>
                                 <th className="text-center">Focus</th>
                                 <th className="text-center">Extra weight (kg)</th>
+                                <th className="text-center">Set volume (kg)</th>
                             </tr>
                         </thead>
                         <tbody>
                             {routineList.length === 0 ? (
                                 <tr>
-                                    <td colSpan={4} className="empty-row">No exercises added yet.</td>
+                                    <td colSpan={5} className="empty-row">No exercises added yet.</td>
                                 </tr>
                             ) : (
                                 routineList.map((routineItem, index) => (
@@ -150,6 +167,7 @@ function New_Session() {
                                         <td className="text-center">{routineItem.reps}</td>
                                         <td className="text-center">{routineItem.focus}</td>
                                         <td className="text-center">{routineItem.extra_weight}</td>
+                                        <td className="text-center">{routineItem.set_volume}</td>
                                     </tr>
                                 ))
                             )}
