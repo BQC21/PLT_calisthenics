@@ -3,21 +3,46 @@ import { useEffect, useState } from "react";
 const ROUTINE_STORAGE_KEY = "plat_routine_list";
 
 export const bodyweight = 70; // Example bodyweight in kg, you can make this dynamic based on user input or profile data
-export function SetVolume(bodyweight, extraWeight, reps, focus) {
+function SetVolume(bodyweight, extraWeight, reps, focus) {
+    let FC = 0.0; 
+    let Volume = 0.0;
     switch (focus) {
         case "vertical_pull":
         case "vertical_push":
-        return reps * (bodyweight * 1.0 + extraWeight);
+            FC = 1.0;
+            break;
         case "horizontal_pull":
         case "horizontal_push":
-        return reps * (bodyweight *0.6 + extraWeight);
+            FC = 0.6;
+            break;
         case "core":
         case "legs":
-        return reps * (bodyweight * 0.0 + extraWeight);
+            FC = 0.0;
+            break;
         default:
-        return reps * (bodyweight * 1.0 + extraWeight);
+            FC = 0.0;
     }
+    Volume = reps * (bodyweight * FC + extraWeight);
+    return Volume;
 };
+
+function computeXP(Difficult) {
+    
+    switch (Difficult) {
+        case "Easy":
+            return 20;
+        case "Moderate":
+            return 40;
+        case "Hard":
+            return 60;
+        case "Very_Hard":
+            return 80;
+        case "Elite":
+            return 100;
+        default:
+            return 0;
+    }
+}
 
 function New_Session() {
     const [selectExercise, setSelectedExercise] = useState("");
@@ -66,6 +91,25 @@ function New_Session() {
         return "";
     };
 
+    const handleDifficult = (exercise) => {
+
+        const difficultMap = {
+            Easy : ["Inverted rows", "Ab wheel", "Squats", "Lunges", "Chin ups", "Push ups", "Crunches"],
+            Moderate : ["Bulgarian squats", "Pull ups", "Pike push ups", "Leg raises", "Dips"],
+            Hard : ["High Pull ups", "Archer Push ups", "Toes to bar", "Dragonflag", "Pistol Squats"],
+            Very_Hard : ["Muscle Ups", "Dragon squats", "Handstand Push ups"],
+            Elite : ["Front lever pull ups", "Planche Push ups"]	
+        };
+
+        for (const [difficult, exerciseList] of Object.entries(difficultMap)) {
+            if (exerciseList.includes(exercise)) {
+                return difficult;
+            }
+        }
+
+        return "";
+    };
+
     const [routineList, setRoutineList] = useState(() => {
         try {
             const savedRoutine = localStorage.getItem(ROUTINE_STORAGE_KEY);
@@ -98,7 +142,8 @@ function New_Session() {
             reps,
             extra_weight: extraWeight,
             focus: handleFocus(selectExercise),
-            set_volume: SetVolume(bodyweight, extraWeight, reps, handleFocus(selectExercise))
+            set_volume: SetVolume(bodyweight, extraWeight, reps, handleFocus(selectExercise)),
+            set_XP : computeXP(handleDifficult(selectExercise))
         };
         setRoutineList([...routineList, routine]);
     };
@@ -156,12 +201,13 @@ function New_Session() {
                                 <th className="text-center">Focus</th>
                                 <th className="text-center">Extra weight (kg)</th>
                                 <th className="text-center">Set volume (kg)</th>
+                                <th className="text-center">XP</th>
                             </tr>
                         </thead>
                         <tbody>
                             {routineList.length === 0 ? (
                                 <tr>
-                                    <td colSpan={5} className="empty-row">No exercises added yet.</td>
+                                    <td colSpan={6} className="empty-row">No exercises added yet.</td>
                                 </tr>
                             ) : (
                                 routineList.map((routineItem, index) => (
@@ -171,6 +217,7 @@ function New_Session() {
                                         <td className="text-center">{routineItem.focus}</td>
                                         <td className="text-center">{routineItem.extra_weight}</td>
                                         <td className="text-center">{routineItem.set_volume}</td>
+                                        <td className="text-center">{routineItem.set_XP}</td>
                                     </tr>
                                 ))
                             )}

@@ -37,6 +37,7 @@ function Home() {
                                             <th>Focus</th>
                                             <th>Extra weight (kg)</th>
                                             <th>Set volume (kg)</th>
+                                            <th className="text-center">XP</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,6 +48,7 @@ function Home() {
                                                 <td>{routineItem.focus}</td>
                                                 <td>{routineItem.extra_weight}</td>
                                                 <td>{routineItem.set_volume}</td>
+                                                <td className="text-center">{routineItem.set_XP}</td>
                                             </tr>
                                         ))}
                                     </tbody>
@@ -55,6 +57,7 @@ function Home() {
                                 <p>No routines added yet.</p>
                             )}
                             <p className="card-text">Total volume(kg): {routineList.reduce((sum, item) => sum + item.set_volume, 0)}</p>
+                            <p className="card-text">Total XP: {routineList.reduce((sum, item) => sum + item.set_XP, 0)}</p>
                         </div>
                     </div>
                     <Link to="/new-session">
