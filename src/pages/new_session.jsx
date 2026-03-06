@@ -5,16 +5,17 @@ const ROUTINE_STORAGE_KEY = "plat_routine_list";
 export const bodyweight = 70; // Example bodyweight in kg, you can make this dynamic based on user input or profile data
 export function SetVolume(bodyweight, extraWeight, reps, focus) {
     switch (focus) {
-        case "pull":
-        return reps * (bodyweight + extraWeight) * 1.0;
-        case "push":
-        return reps * (bodyweight + extraWeight) * 0.8;
+        case "vertical_pull":
+        case "vertical_push":
+        return reps * (bodyweight * 1.0 + extraWeight);
+        case "horizontal_pull":
+        case "horizontal_push":
+        return reps * (bodyweight *0.6 + extraWeight);
         case "core":
-        return reps * (bodyweight + extraWeight) * 0.6;
         case "legs":
-        return reps * (extraWeight) * 1.2;
+        return reps * (bodyweight * 0.0 + extraWeight);
         default:
-        return reps * (bodyweight + extraWeight) * 1.0;
+        return reps * (bodyweight * 1.0 + extraWeight);
     }
 };
 
@@ -48,8 +49,10 @@ function New_Session() {
 
     const handleFocus = (exercise) => {
         const focusMap = {
-            pull: ["Pull ups", "Inverted rows", "Chin ups", "High Pull ups", "Muscle ups", "Front lever pull ups"],
-            push: ["Dips", "Push ups", "Pike Push ups", "Archer Push ups", "Handstand Push ups", "Planceh Push ups"],
+            vertical_pull: ["Pull ups", "Chin ups", "High Pull ups", "Muscle ups"],
+            vertical_push: ["Dips", "Handstand Push ups"],
+            horizontal_pull: ["Inverted rows", "Front lever pull ups"],
+            horizontal_push: ["Push ups", "Pike Push ups", "Archer Push ups", "Planche Push ups"],
             core: ["Ab wheel", "Leg raises", "Crunches", "Toes to bar", "Dragonflag"],
             legs: ["Squats", "Lunges", "Bulgarian Squats", "Pistol Squats", "Dragon Squats"]
         };
