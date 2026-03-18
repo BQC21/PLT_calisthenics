@@ -18,7 +18,7 @@ Develop a personal load tracker only registering calisthenics exercises just lik
 
 ## 2. Initialize
 ```shell
-    npm init
+    npm install
 ```
 
 ## 3. Run 
