@@ -1,5 +1,3 @@
-
-1,736
 # PLT Calisthenics
 
 PLT Calisthenics is an application for tracking your personal loads in calisthenics exercises such as pull-ups, dips, and muscle-ups. It allows you to record repetitions and additional weight for each exercise, making it easy to track and progress your routine.
