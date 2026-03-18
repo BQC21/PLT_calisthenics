@@ -13,11 +13,6 @@ import Push from "./pages/groups/push";
 import Core from "./pages/groups/core";
 import Legs from "./pages/groups/legs";
 
-// Auth
-// import Login from "./auth/login";
-// import Suscription from "./auth/suscription";
-
-
 function App() {
 
   return (
@@ -32,8 +27,6 @@ function App() {
           <Route path="/push" element={<Push />} />
           <Route path="/core" element={<Core />} />
           <Route path="/legs" element={<Legs />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/suscription" element={<Suscription />} /> */}
         </Routes>
       </div>
     </>

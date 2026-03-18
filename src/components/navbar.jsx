@@ -12,12 +12,6 @@ function Navbar() {
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/description">+ Info</NavLink>
                     </li>
-                    {/* <li className="nav-item">
-                        <NavLink className="nav-link" to="/login">INICIAR SESIÓN</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/suscription">SUSCRIBIRSE</NavLink>
-                    </li> */}
                 </ul>
             </div>
         </div>
